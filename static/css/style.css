@@ -1,0 +1,528 @@
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fc;
+    color: #111827;
+}
+
+.page,
+.dashboard {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 45px 35px 60px;
+}
+
+
+/* ================================
+   UPLOAD PAGE
+================================ */
+
+.hero {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.badge,
+.status-badge {
+    display: inline-block;
+    background: #eaf1ff;
+    color: #2563eb;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #64748b;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   UPLOAD CARD
+================================ */
+
+.upload-card {
+    width: 850px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(30, 64, 175, 0.12);
+    border: 1px solid #e2e8f0;
+}
+
+.upload-heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.upload-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaf1ff;
+    border-radius: 16px;
+    font-size: 30px;
+}
+
+.upload-heading h2 {
+    font-size: 28px;
+    margin-bottom: 7px;
+}
+
+.upload-heading p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.file-box {
+    border: 2px dashed #b9cdf5;
+    border-radius: 14px;
+    padding: 25px;
+    background: #f8faff;
+    text-align: center;
+}
+
+.file-box input {
+    font-size: 15px;
+}
+
+.file-box small,
+.helper {
+    display: block;
+    color: #64748b;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 130px;
+    padding: 15px;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.analyze-btn {
+    width: 100%;
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 17px;
+    border-radius: 11px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.analyze-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   FEATURES
+================================ */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1050px;
+    margin: 40px auto 0;
+}
+
+.feature-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+.feature-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.feature-card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #64748b;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 60px;
+}
+
+
+/* ==================================================
+   RESULT / DASHBOARD PAGE
+================================================== */
+
+.dashboard {
+    max-width: 1250px;
+    padding-top: 35px;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.dashboard-header h1 {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.dashboard-header h1 span {
+    color: #2563eb;
+}
+
+.dashboard-header p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+
+/* ================================
+   SCORE CARDS
+================================ */
+
+.score-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.score-card {
+    background: white;
+    border: 1px solid #dbe3ef;
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+}
+
+.score-circle {
+    width: 95px;
+    height: 95px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 800;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.score-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.score-card p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* ================================
+   GENERAL CARDS
+================================ */
+
+.card {
+    background: white;
+    border: 1px solid #dbe3ef;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+.full-card {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.card h2 {
+    font-size: 17px;
+    margin-bottom: 15px;
+    color: #111827;
+}
+
+.card p {
+    color: #475569;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+
+/* ================================
+   TWO COLUMN CARDS
+================================ */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+
+/* ================================
+   LISTS
+================================ */
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    padding: 10px 0;
+    border-bottom: 1px solid #edf2f7;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.card li:last-child {
+    border-bottom: none;
+}
+
+
+/* ================================
+   TAGS
+================================ */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tag.blue {
+    background: #eaf1ff;
+    color: #2563eb;
+}
+
+.tag.green {
+    background: #e8f8ef;
+    color: #15803d;
+}
+
+.tag.orange {
+    background: #fff2df;
+    color: #c2410c;
+}
+
+.tag.red {
+    background: #ffe8e8;
+    color: #dc2626;
+}
+
+
+/* ================================
+   JOB ROLES
+================================ */
+
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.job-card {
+    background: #f8fafc;
+    border: 1px solid #dbe3ef;
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #334155;
+}
+
+.job-card span {
+    color: #2563eb;
+    font-size: 18px;
+}
+
+
+/* ================================
+   CAREER ADVICE
+================================ */
+
+.advice-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.advice-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.advice-item:last-child {
+    border-bottom: none;
+}
+
+.number {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+
+/* ================================
+   BOTTOM BUTTON
+================================ */
+
+.bottom-action {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.analyze-button {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.analyze-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 800px) {
+
+    .page,
+    .dashboard {
+        padding: 30px 18px 50px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .score-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .job-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .upload-card {
+        padding: 25px;
+    }
+}

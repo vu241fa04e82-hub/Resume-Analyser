@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume Analyzer | AI Career Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- HEADER -->
+    <header class="hero">
+
+        <div class="badge">
+            ✨ AI POWERED CAREER ANALYZER
+        </div>
+
+        <h1>
+            Resume <span>Analyzer</span>
+        </h1>
+
+        <p>
+            Upload your resume and discover your ATS score,
+            skill gaps, job matches and career opportunities.
+        </p>
+
+    </header>
+
+
+    <!-- MAIN UPLOAD CARD -->
+    <main>
+
+        <section class="upload-card">
+
+            <div class="upload-heading">
+
+                <div class="upload-icon">
+                    📄
+                </div>
+
+                <div>
+                    <h2>Analyze Your Resume</h2>
+
+                    <p>
+                        Upload your resume and let AI analyze your career profile.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form action="/upload"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+                <!-- PDF -->
+                <div class="form-group">
+
+                    <label for="resume">
+                        📄 Choose Resume PDF
+                    </label>
+
+                    <div class="file-box">
+
+                        <input
+                            type="file"
+                            id="resume"
+                            name="resume"
+                            accept=".pdf"
+                            required
+                        >
+
+                        <small>
+                            PDF format only • Maximum recommended size: 5MB
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- JOB DESCRIPTION -->
+                <div class="form-group">
+
+                    <label for="job_description">
+                        🎯 Target Job Description
+                    </label>
+
+                    <textarea
+                        id="job_description"
+                        name="job_description"
+                        placeholder="Paste the job description here..."
+                    ></textarea>
+
+                    <small class="helper">
+                        💡 Adding a job description gives you a more accurate
+                        resume-to-job match.
+                    </small>
+
+                </div>
+
+
+                <!-- BUTTON -->
+                <button type="submit" class="analyze-btn">
+                    🚀 Analyze My Resume
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section class="features">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <h3>ATS Score</h3>
+
+                <p>
+                    Understand how ATS-friendly your resume is.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🔑
+                </div>
+
+                <h3>Keyword Analysis</h3>
+
+                <p>
+                    Find important skills and missing keywords
+                    recruiters are looking for.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    💼
+                </div>
+
+                <h3>Career Suggestions</h3>
+
+                <p>
+                    Discover job roles that match your skills,
+                    education and experience.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        Built with ❤️ using Python • Flask • Gemini AI
+    </footer>
+
+</div>
+
+</body>
+</html>

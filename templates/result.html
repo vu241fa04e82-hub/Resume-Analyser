@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume Analysis Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- HEADER -->
+    <header class="dashboard-header">
+        <div class="status-badge">✨ AI ANALYSIS COMPLETE</div>
+
+        <h1>Your Resume <span>Dashboard</span></h1>
+
+        <p>
+            Here's your personalized AI-powered career analysis.
+        </p>
+    </header>
+
+
+    <!-- SCORE CARDS -->
+    <section class="score-grid">
+
+        <div class="score-card">
+            <div class="score-circle">
+                {{ analysis.get('ats_score', 0) }}
+            </div>
+
+            <h3>ATS Score</h3>
+            <p>Resume compatibility</p>
+        </div>
+
+
+        <div class="score-card">
+            <div class="score-circle">
+                {{ analysis.get('job_match_score', 0) }}
+            </div>
+
+            <h3>Job Match</h3>
+            <p>Match with target role</p>
+        </div>
+
+    </section>
+
+
+    <!-- PROFILE SUMMARY -->
+    <section class="card full-card">
+
+        <h2>👤 Profile Summary</h2>
+
+        <p>
+            {{ analysis.get('summary', 'No summary available.') }}
+        </p>
+
+    </section>
+
+
+    <!-- TWO COLUMN SECTION -->
+    <section class="two-column">
+
+        <!-- STRENGTHS -->
+        <div class="card">
+
+            <h2>💪 Key Strengths</h2>
+
+            <ul>
+                {% for item in analysis.get('strengths', []) %}
+                    <li>✓ {{ item }}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+
+        <!-- SKILLS -->
+        <div class="card">
+
+            <h2>🛠 Skills Found</h2>
+
+            <div class="tags">
+
+                {% for skill in analysis.get('skills', []) %}
+                    <span class="tag blue">
+                        {{ skill }}
+                    </span>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WEAK SKILLS + MATCHED KEYWORDS -->
+    <section class="two-column">
+
+        <div class="card">
+
+            <h2>⚠️ Missing / Weak Skills</h2>
+
+            <div class="tags">
+
+                {% for skill in analysis.get('missing_skills', []) %}
+                    <span class="tag orange">
+                        {{ skill }}
+                    </span>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>🔑 Matched Keywords</h2>
+
+            <div class="tags">
+
+                {% for keyword in analysis.get('matched_keywords', []) %}
+                    <span class="tag green">
+                        ✓ {{ keyword }}
+                    </span>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISSING KEYWORDS + IMPROVEMENTS -->
+    <section class="two-column">
+
+        <div class="card">
+
+            <h2>❌ Missing Keywords</h2>
+
+            <div class="tags">
+
+                {% for keyword in analysis.get('missing_keywords', []) %}
+                    <span class="tag red">
+                        {{ keyword }}
+                    </span>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>📝 Resume Improvements</h2>
+
+            <ul>
+
+                {% for item in analysis.get('improvements', []) %}
+                    <li>💡 {{ item }}</li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- JOB ROLES -->
+    <section class="card full-card">
+
+        <h2>💼 Recommended Job Roles</h2>
+
+        <div class="job-grid">
+
+            {% for role in analysis.get('job_roles', []) %}
+
+                <div class="job-card">
+
+                    <strong>{{ role }}</strong>
+
+                    <span>→</span>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- CAREER ADVICE -->
+    <section class="card full-card">
+
+        <h2>🚀 Career Advice</h2>
+
+        <div class="advice-list">
+
+            {% for advice in analysis.get('career_advice', []) %}
+
+                <div class="advice-item">
+
+                    <div class="number">
+                        {{ loop.index }}
+                    </div>
+
+                    <p>{{ advice }}</p>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- BUTTON -->
+    <div class="bottom-action">
+
+        <a href="/" class="analyze-button">
+            ← Analyze Another Resume
+        </a>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
